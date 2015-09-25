@@ -1,1 +1,14 @@
 <h1>Here you can see all our festivals</h1>
+
+<% if @festivals.blank? %>
+  <p>We don't have any record yet!</p>
+<% else %>
+  <ul>
+    <% @festivals.each do |festival| %>
+      <li>
+        <%= festival.name %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
