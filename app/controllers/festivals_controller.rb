@@ -4,7 +4,6 @@ class FestivalsController < ApplicationController
     @festivals = Festival.all
   end
   def show
-
   end
   def new
     @festival = Festival.new
