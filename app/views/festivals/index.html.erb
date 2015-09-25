@@ -6,7 +6,7 @@
   <ul>
     <% @festivals.each do |festival| %>
       <li>
-        <%= festival.name %>
+        <%= link_to festival.name, festival_path(festival) %>
       </li>
     <% end %>
   </ul>
