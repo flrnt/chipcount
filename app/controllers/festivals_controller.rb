@@ -9,7 +9,8 @@ class FestivalsController < ApplicationController
     @festival = Festival.new
   end
   def create
-    @festival = Festival.create(festival_params)
+    @festival = Festival.new(festival_params)
+    @festival.save
   end
   private
   def set_festival
