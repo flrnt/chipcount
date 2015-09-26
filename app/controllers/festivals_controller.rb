@@ -1,5 +1,5 @@
 class FestivalsController < ApplicationController
-  before_action :set_festival, only: [:show, :edit, :update]
+  before_action :set_festival, only: [:show, :edit, :update, :destroy]
   def index
     @festivals = Festival.all
   end
@@ -17,6 +17,10 @@ class FestivalsController < ApplicationController
   def update
     @festival.update(festival_params)
     redirect_to festival_path(@festival)
+  end
+  def destroy
+    @festival.destroy
+    redirect_to festivals_path
   end
   private
   def set_festival
