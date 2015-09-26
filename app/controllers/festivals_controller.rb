@@ -1,5 +1,5 @@
 class FestivalsController < ApplicationController
-  before_action :set_festival, only: [:show]
+  before_action :set_festival, only: [:show, :edit, :update]
   def index
     @festivals = Festival.all
   end
@@ -11,6 +11,12 @@ class FestivalsController < ApplicationController
   def create
     @festival = Festival.new(festival_params)
     @festival.save
+  end
+  def edit
+  end
+  def update
+    @festival.update(festival_params)
+    redirect_to festival_path(@festival)
   end
   private
   def set_festival
