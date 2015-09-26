@@ -1,6 +1,8 @@
 
   <h2><%= @festival.name %></h2>
-  <p><%= @festival.address %></p>
+  <% unless @festival.address.nil? %>
+    <p><%= @festival.address %></p>
+  <% end %>
   <% unless @festival.start_date.nil? || @festival.end_date.nil? %>
     <p>
       From <%= @festival.start_date.strftime('%A %w %B') %> to <%= @festival.end_date.strftime('%A %w %B') %>
